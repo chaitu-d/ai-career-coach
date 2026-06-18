@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Career Diagnostic Coach &middot; Readiness Rating</title>
+<meta name="description" content="A data-driven AI-Readiness diagnostic. Calculate your AI-Readiness Rating (0–100), discover your persona, and get a high-impact next step." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark">AI</span>
+      <span class="brand-text">Career&nbsp;Diagnostic&nbsp;Coach</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#diagnostic">Diagnostic</a>
+      <a href="#method">Methodology</a>
+      <a href="#personas">Personas</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-ghost" href="#diagnostic">Start free</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">AI-Readiness Rating &middot; v1.0</p>
+        <h1>
+          How ready is <span class="grad">your career</span> for the AI era?
+        </h1>
+        <p class="lede">
+          Eight questions. Sixty seconds. A precise <strong>0&ndash;100</strong> score,
+          your professional <strong>persona</strong>, one high-impact <strong>next step</strong>,
+          and a copy-ready <strong>LinkedIn</strong> post.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#diagnostic">Run my diagnostic</a>
+          <a class="btn btn-link" href="#method">How the score works &rarr;</a>
+        </div>
+        <ul class="hero-stats">
+          <li><b>24</b><span>Max points</span></li>
+          <li><b>6</b><span>Weighted dimensions</span></li>
+          <li><b>4</b><span>Career personas</span></li>
+        </ul>
+      </div>
+
+      <aside class="hero-card glass" aria-label="Sample result preview">
+        <div class="hc-top">
+          <span class="dot dot-r"></span>
+          <span class="dot dot-y"></span>
+          <span class="dot dot-g"></span>
+          <span class="hc-title">result.json</span>
+        </div>
+<pre class="hc-code"><code>{
+  "rating": 78,
+  "persona": "The Strategic Adapter",
+  "diagnostic": "Strong daily AI usage and
+    high upskilling cadence, but limited
+    project ownership is a blind spot.",
+  "next_step": "Ship one end-to-end AI
+    feature in the next 14 days.",
+  "linkedin": "I scored 78/100 on the AI
+    Career Diagnostic... #AI
+    #FutureOfWork #CareerGrowth"
+}</code></pre>
+      </aside>
+    </div>
+  </section>
+
+  <!-- DIAGNOSTIC -->
+  <section id="diagnostic" class="section">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow">Step 1</p>
+        <h2>Your 60-second diagnostic</h2>
+        <p class="sub">Pick the option that best reflects you today. Everything runs in your browser &mdash; nothing is uploaded.</p>
+      </header>
+
+      <form id="quiz" class="quiz glass" novalidate>
+
+        <!-- progress -->
+        <div class="quiz-progress" aria-hidden="true">
+          <div class="qp-bar"><span id="qpFill"></span></div>
+          <div class="qp-label"><span id="qpCount">0</span> / 8 answered</div>
+        </div>
+
+        <!-- Q1 Job Role -->
+        <fieldset class="q" data-q="role" data-required="true">
+          <legend><span class="q-num">01</span> Job Role</legend>
+          <div class="opts">
+            <label><input type="radio" name="role" value="A"><span><b>A.</b> Individual Contributor</span></label>
+            <label><input type="radio" name="role" value="B"><span><b>B.</b> Senior IC / Specialist</span></label>
+            <label><input type="radio" name="role" value="C"><span><b>C.</b> Manager</span></label>
+            <label><input type="radio" name="role" value="D"><span><b>D.</b> Tech Lead / Architect</span></label>
+            <label><input type="radio" name="role" value="E"><span><b>E.</b> Director / VP+</span></label>
+            <label><input type="radio" name="role" value="F"><span><b>F.</b> Student</span></label>
+            <label><input type="radio" name="role" value="G"><span><b>G.</b> Fresh Grad (&lt;1 yr)</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Q2 Experience (not scored) -->
+        <fieldset class="q" data-q="exp" data-required="true">
+          <legend><span class="q-num">02</span> Experience <span class="q-tag">context only</span></legend>
+          <div class="opts">
+            <label><input type="radio" name="exp" value="A"><span><b>A.</b> 0&ndash;1 yr</span></label>
+            <label><input type="radio" name="exp" value="B"><span><b>B.</b> 1&ndash;3 yrs</span></label>
+            <label><input type="radio" name="exp" value="C"><span><b>C.</b> 3&ndash;5 yrs</span></label>
+            <label><input type="radio" name="exp" value="D"><span><b>D.</b> 5&ndash;10 yrs</span></label>
+            <label><input type="radio" name="exp" value="E"><span><b>E.</b> 10+ yrs</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Q3 Workflow -->
+        <fieldset class="q" data-q="workflow" data-required="true">
+          <legend><span class="q-num">03</span> AI in your daily workflow</legend>
+          <div class="opts">
+            <label><input type="radio" name="workflow" value="A"><span><b>A.</b> Never use AI tools</span></label>
+            <label><input type="radio" name="workflow" value="B"><span><b>B.</b> Occasionally (few times / month)</span></label>
+            <label><input type="radio" name="workflow" value="C"><span><b>C.</b> Weekly &mdash; for specific tasks</span></label>
+            <label><input type="radio" name="workflow" value="D"><span><b>D.</b> Daily &mdash; deeply embedded</span></label>
+            <label><input type="radio" name="workflow" value="E"><span><b>E.</b> Agentic &mdash; AI runs parts of my workflow</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Q4 Projects -->
+        <fieldset class="q" data-q="projects" data-required="true">
+          <legend><span class="q-num">04</span> AI projects shipped <span class="q-tag">project mgmt</span></legend>
+          <div class="opts">
+            <label><input type="radio" name="projects" value="A"><span><b>A.</b> None yet</span></label>
+            <label><input type="radio" name="projects" value="B"><span><b>B.</b> 1 prototype</span></label>
+            <label><input type="radio" name="projects" value="C"><span><b>C.</b> 2&ndash;3 shipped</span></label>
+            <label><input type="radio" name="projects" value="D"><span><b>D.</b> 4&ndash;6 shipped</span></label>
+            <label><input type="radio" name="projects" value="E"><span><b>E.</b> 7+ shipped or production-owned</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Q5 Uncertainty -->
+        <fieldset class="q" data-q="uncertainty" data-required="true">
+          <legend><span class="q-num">05</span> Comfort with AI ambiguity</legend>
+          <div class="opts">
+            <label><input type="radio" name="uncertainty" value="A"><span><b>A.</b> Very uncomfortable &mdash; I want certainty</span></label>
+            <label><input type="radio" name="uncertainty" value="B"><span><b>B.</b> Somewhat uneasy</span></label>
+            <label><input type="radio" name="uncertainty" value="C"><span><b>C.</b> Neutral &mdash; I adapt</span></label>
+            <label><input type="radio" name="uncertainty" value="D"><span><b>D.</b> Comfortable &mdash; I experiment</span></label>
+            <label><input type="radio" name="uncertainty" value="E"><span><b>E.</b> Energized &mdash; ambiguity is opportunity</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Q6 Automation -->
+        <fieldset class="q" data-q="automation" data-required="true">
+          <legend><span class="q-num">06</span> % of your work that is automatable</legend>
+          <div class="opts">
+            <label><input type="radio" name="automation" value="A"><span><b>A.</b> 0&ndash;10%</span></label>
+            <label><input type="radio" name="automation" value="B"><span><b>B.</b> 11&ndash;25%</span></label>
+            <label><input type="radio" name="automation" value="C"><span><b>C.</b> 26&ndash;50%</span></label>
+            <label><input type="radio" name="automation" value="D"><span><b>D.</b> 51&ndash;75%</span></label>
+            <label><input type="radio" name="automation" value="E"><span><b>E.</b> 76&ndash;100%</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Q7 Disruption -->
+        <fieldset class="q" data-q="disruption" data-required="true">
+          <legend><span class="q-num">07</span> How will AI reshape your role in 24 months?</legend>
+          <div class="opts">
+            <label><input type="radio" name="disruption" value="A"><span><b>A.</b> No impact expected</span></label>
+            <label><input type="radio" name="disruption" value="B"><span><b>B.</b> Minor tool changes</span></label>
+            <label><input type="radio" name="disruption" value="C"><span><b>C.</b> Moderate &mdash; new skills required</span></label>
+            <label><input type="radio" name="disruption" value="D"><span><b>D.</b> Major reshape of responsibilities</span></label>
+            <label><input type="radio" name="disruption" value="E"><span><b>E.</b> Role redefinition or replacement</span></label>
+          </div>
+        </fieldset>
+
+        <!-- Q8 Upskilling -->
+        <fieldset class="q" data-q="upskilling" data-required="true">
+          <legend><span class="q-num">08</span> Hours / week on AI upskilling</legend>
+          <div class="opts">
+            <label><input type="radio" name="upskilling" value="A"><span><b>A.</b> 0 hours</span></label>
+            <label><input type="radio" name="upskilling" value="B"><span><b>B.</b> &lt;1 hour</span></label>
+            <label><input type="radio" name="upskilling" value="C"><span><b>C.</b> 1&ndash;3 hours</span></label>
+            <label><input type="radio" name="upskilling" value="D"><span><b>D.</b> 4&ndash;7 hours</span></label>
+            <label><input type="radio" name="upskilling" value="E"><span><b>E.</b> 8+ hours</span></label>
+          </div>
+        </fieldset>
+
+        <div class="quiz-actions">
+          <button type="submit" class="btn btn-primary btn-lg">
+            <span>Calculate my AI-Readiness</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <button type="reset" class="btn btn-ghost">Reset</button>
+          <p id="quizError" class="quiz-error" role="alert" hidden>Please answer all questions before calculating.</p>
+        </div>
+      </form>
+
+      <!-- RESULTS -->
+      <article id="results" class="results glass" hidden aria-live="polite">
+        <header class="res-head">
+          <div class="res-score">
+            <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring-bg" cx="60" cy="60" r="52" />
+              <circle id="ringFg" class="ring-fg" cx="60" cy="60" r="52" />
+            </svg>
+            <div class="res-score-num">
+              <span id="scoreNum">0</span><span class="res-score-den">/100</span>
+              <small id="scoreSub">Readiness Rating</small>
+            </div>
+          </div>
+
+          <div class="res-meta">
+            <p class="eyebrow">Persona</p>
+            <h3 id="personaName">&mdash;</h3>
+            <p id="personaTag" class="persona-tag">&mdash;</p>
+            <p id="benchmark" class="benchmark">&mdash;</p>
+          </div>
+        </header>
+
+        <div class="res-grid">
+          <section class="res-card">
+            <h4>Diagnostic summary</h4>
+            <p id="diagnosticText">&mdash;</p>
+          </section>
+          <section class="res-card">
+            <h4>Your next step</h4>
+            <p id="nextStepText">&mdash;</p>
+          </section>
+          <section class="res-card res-card-wide">
+            <div class="res-card-head">
+              <h4>LinkedIn post <span class="muted">&middot; ready to copy</span></h4>
+              <button id="copyLinked" type="button" class="btn btn-ghost btn-sm" aria-label="Copy LinkedIn post">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                <span id="copyLabel">Copy</span>
+              </button>
+            </div>
+            <p id="linkedinText" class="linkedin">&mdash;</p>
+          </section>
+          <section class="res-card res-card-wide breakdown">
+            <h4>Score breakdown</h4>
+            <ul id="breakdownList" class="breakdown-list"></ul>
+            <p id="breakdownNote" class="muted small"></p>
+          </section>
+          <section class="res-card res-card-wide reflective">
+            <h4>One reflective question</h4>
+            <p id="reflectiveQ" class="reflective-q">&mdash;</p>
+          </section>
+          <section class="res-card res-card-wide json-out">
+            <div class="res-card-head">
+              <h4>Raw output <span class="muted">&middot; JSON</span></h4>
+              <button id="copyJson" type="button" class="btn btn-ghost btn-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                <span id="copyJsonLabel">Copy</span>
+              </button>
+            </div>
+<pre class="hc-code"><code id="jsonOut">{}</code></pre>
+          </section>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section id="method" class="section section-alt">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow">Step 2</p>
+        <h2>How the score is calculated</h2>
+        <p class="sub">A transparent formula &mdash; no black box, no vibes-based rating.</p>
+      </header>
+
+      <div class="method-grid">
+        <div class="method-card glass">
+          <span class="m-num">01</span>
+          <h4>Point mapping</h4>
+          <p>Each option maps to a point value:</p>
+          <ul class="kv">
+            <li><kbd>A</kbd><span>0</span></li>
+            <li><kbd>B</kbd><span>1</span></li>
+            <li><kbd>C</kbd><span>2</span></li>
+            <li><kbd>D</kbd><span>3</span></li>
+            <li><kbd>E</kbd><span>4</span></li>
+          </ul>
+        </div>
+
+        <div class="method-card glass">
+          <span class="m-num">02</span>
+          <h4>The formula</h4>
+          <p>Six scored categories, 24 maximum points.</p>
+<pre class="formula"><code>rating = (sum_of_points / max_points) * 100</code></pre>
+          <p class="muted small">Experience is captured for context only and never enters the score.</p>
+        </div>
+
+        <div class="method-card glass">
+          <span class="m-num">03</span>
+          <h4>Role-based weighting</h4>
+          <ul class="bullets">
+            <li><b>Architect / Tech Lead (D):</b> 1.2&times; multiplier on AI Project Management.</li>
+            <li><b>Student / Fresh Grad (F&nbsp;or&nbsp;G):</b> Projects category is excluded from the denominator (max drops to 20) so you are not penalized for not having shipped 3+ AI projects.</li>
+          </ul>
+        </div>
+
+        <div class="method-card glass">
+          <span class="m-num">04</span>
+          <h4>Peer benchmark</h4>
+          <p>Your score is compared against a calibrated distribution by role, so you can see where you stand relative to your peers &mdash; not against a flat global average.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAS -->
+  <section id="personas" class="section">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow">Step 3</p>
+        <h2>The four AI-readiness personas</h2>
+        <p class="sub">Where do you land on the curve from AI-Agnostic to AI-Native Architect?</p>
+      </header>
+
+      <div class="persona-grid">
+        <article class="persona-card glass">
+          <div class="p-band p-band-1"></div>
+          <p class="p-range">0 &ndash; 25</p>
+          <h3>AI-Agnostic</h3>
+          <p>AI is something happening to other people. Your edge is durable, but your runway is shrinking faster than you think.</p>
+        </article>
+        <article class="persona-card glass">
+          <div class="p-band p-band-2"></div>
+          <p class="p-range">26 &ndash; 50</p>
+          <h3>The Explorer</h3>
+          <p>You poke at the tools, share a screenshot occasionally, but AI hasn&rsquo;t entered your workflow as a system yet. High upside if you commit.</p>
+        </article>
+        <article class="persona-card glass">
+          <div class="p-band p-band-3"></div>
+          <p class="p-range">51 &ndash; 75</p>
+          <h3>The Strategic Adapter</h3>
+          <p>AI is a daily co-worker. You have shipped real work with it and are starting to redesign how you operate &mdash; not just <em>what</em> you do.</p>
+        </article>
+        <article class="persona-card glass">
+          <div class="p-band p-band-4"></div>
+          <p class="p-range">76 &ndash; 100</p>
+          <h3>The AI-Native Architect</h3>
+          <p>You build systems where AI is the primary collaborator. You don&rsquo;t adapt to disruption &mdash; you author it.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section-alt">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Quick answers</h2>
+      </header>
+      <div class="faq-grid">
+        <details class="faq glass" open>
+          <summary>Is my data sent anywhere?</summary>
+          <p>No. The diagnostic runs entirely in your browser. Nothing is transmitted, stored on a server, or used to train a model.</p>
+        </details>
+        <details class="faq glass">
+          <summary>Why is Experience not scored?</summary>
+          <p>Experience is a context modifier &mdash; not a competency. We use it to calibrate your peer benchmark, not to inflate or deflate your rating.</p>
+        </details>
+        <details class="faq glass">
+          <summary>Why do Architects get a Projects multiplier?</summary>
+          <p>For Architects and Tech Leads, the ability to scope, lead, and ship AI-driven projects is disproportionately predictive of long-term resilience &mdash; so we weight it accordingly (1.2&times;).</p>
+        </details>
+        <details class="faq glass">
+          <summary>Can I integrate this into my own product?</summary>
+          <p>Yes. The diagnostic emits a clean JSON payload after each run &mdash; pipe it into a progress bar, a dashboard, a Slack bot, or an automated coaching workflow.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#top">
+        <span class="brand-mark">AI</span>
+        <span class="brand-text">Career&nbsp;Diagnostic&nbsp;Coach</span>
+      </a>
+      <p class="muted small">A data-driven snapshot of where you stand in the AI transition &mdash; not financial, legal, or career advice.</p>
+    </div>
+    <div class="foot-links">
+      <a href="#diagnostic">Diagnostic</a>
+      <a href="#method">Methodology</a>
+      <a href="#personas">Personas</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <p class="copy muted small">&copy; <span id="yr"></span> AI Career Diagnostic Coach</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
